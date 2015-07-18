@@ -10,24 +10,26 @@ describe-key | C-h k | describe a key sequence
 describe-bindings | C-h b | show all key bindsings
 
 
-
-##Cursor Movement & Scrolling
+##Cursor Movement
 
 LISP function | Key binding | description
 --- | --- | ---
-next-line | C-n |
-previous-line | C-p |
-forward-word | M-f |
-backward-word | M-b |
-move-beginning-of-line | C-a
-move-end-of-line | C-e
-forward-char | C-f | Move forward one character
 backward-char | C-b | Move back one character
+forward-char | C-f | Move forward one character
+backward-word | M-b |
+forward-word | M-f |
+previous-line | C-p |
+next-line | C-n |
+move-beginning-of-line | C-a
+move-end-of-line | C-e |
+backward-sentence | M-a |
+forward-sentence | M-e |
 scroll-up-command | C-v |
 scroll-down-command | M-v |
+beginning-of-buffer | M-< |
+end-of-buffer | M-> |
 
-
-#Editing
+##Editing
 LISP function | Key binding | description
 --- | --- | ---
 open-line | C-o | open a new line
@@ -65,6 +67,11 @@ find-file-read-only-other-window, | C-x 4 r | Read contents of file into next wi
 save-buffer | C-x C-s | SAVE: Save the current buffer to its file
 write-file | C-x C-w | Save a buffer to a specified file
 save-some-buffers | C-x s | Save any or all buffers to their files
+
+## Make it pretty
+LISP function | Key binding | description
+--- | --- | ---
+linum-mode | N/A | show line numbers
 
 
 
