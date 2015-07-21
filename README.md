@@ -71,7 +71,7 @@ end-of-buffer | M-> |
 
 
 
-## Make it pretty
+## Make it more purty
 LISP function | Key binding | description
 --- | --- | ---
 linum-mode | N/A | show line numbers
@@ -120,7 +120,7 @@ delete-blank-lines | C-x C-o | delete blank lines around current line
 delete-indentation | M-^ | join two lines (delete newline + surrounding spaces)
 
 
-##KILL commands
+##KILLin
 LISP function | Key binding | description
 --- | --- | ---
 kill-line | C-k | kill from cursor to end of line
@@ -132,4 +132,17 @@ kill-sentence | M-k | kill from cursor to end of sentence
 backward-kill-sentence | C-x DEL | kill backward to beginning of sentence
 kill-region | C-w | kill the region
 zap-to-char | M-z char | kill through next occurrence of char
+ 
+
+##Yankin
+LISP function | Key binding | description
+--- | --- | ---
+yank | C-y | yank most recently killed text
+universal-argument, yank| C-u C-y | same as C-7, cursor at beginning of new text
+yank-pop | M-y | replace yanked text with ealier killed text
+  | C-y M-y | use if "previous command was not a yank"
+kill-ring-save | M-w | copy region to kill ring
+append-next-kill | M-C-w | append next kill to newest kill ring
+describe-variable | C-h v |
+ | C-h v kill-ring | display the actual values in the kill ring
  
