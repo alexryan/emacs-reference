@@ -15,6 +15,10 @@ LISP function | Key binding | description
 --- | --- | ---
 undo | C-x u |
 keyboard-quit | C-g | emergency exit
+suspend-frame | C-z | whatever you do, DO NOT push this shiny red button.
+view-lossage | C-h l | view a complete history of all the commands you've entered so far
+list-command-history | M-x list-command-history | view a history of mini-buffer commands you've entered
+
 
 
 ##Files
@@ -140,9 +144,24 @@ LISP function | Key binding | description
 yank | C-y | yank most recently killed text
 universal-argument, yank| C-u C-y | same as C-7, cursor at beginning of new text
 yank-pop | M-y | replace yanked text with ealier killed text
-  | C-y M-y | use if "previous command was not a yank"
+yank-pop  | C-y M-y | use if "previous command was not a yank"
+yank-pop  | C-u -1 M-y | cycle backwards by 1 jump through the kill-ring
 kill-ring-save | M-w | copy region to kill ring
 append-next-kill | M-C-w | append next kill to newest kill ring
 describe-variable | C-h v |
  | C-h v kill-ring | display the actual values in the kill ring
+ 
+##Fixin stuff
+LISP function | Key binding | description
+--- | --- | ---
+delete-backward-char | DEL | delete one character to the left of cursor
+backward-kill-word | M-DEL | kill the previous word
+backard-kill-sentence | C-x DEL | kill to the beginning of the sentence
+negative-argument | M-- | do the opposite of what comes next
+ | M--M-u | change the previous word to uppercase
+ | M--M-l | change the previous word to lowercase
+transpose-chars | C-t | transpose two adjacent characters
+transpose-words | M-t | transpose two adjacent words
+transose-lines | C-x C-t | transpose two consecutive lines
+
  
