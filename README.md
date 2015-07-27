@@ -16,33 +16,33 @@ LISP function | Key binding | description
 undo | C-x u |
 keyboard-quit | C-g | emergency exit
 suspend-frame | C-z | whatever you do, DO NOT push this shiny red button.
+keyboard-escape-quit | M-M-M | and definitely don't do this
 view-lossage | C-h l | view a complete history of all the commands you've entered so far
 list-command-history | M-x list-command-history | view a history of mini-buffer commands you've entered
-
 
 
 ##Files
 LISP function | Key binding | description
 --- | --- | ---
 find-file | C-x C-f | READ: Switch to buffer containing specified file
+save-buffer | C-x C-s | SAVE: Save the current buffer to its file
+write-file | C-x C-w | Save a buffer to a specified file
+save-some-buffers | C-x s | Save any or all buffers to their files
 find-alternate-file | C-x C-v | Replace buffer contents with specified file
 insert-file | C-x i | Insert contents of file into buffer
 find-file-other-window | C-x 4 C-f | Read contents of file into next window
 find-file-other-window | C-x 4 f | Read contents of file into next window
 find-file-read-only-other-window, | C-x 4 r | Read contents of file into next window (read only)
-save-buffer | C-x C-s | SAVE: Save the current buffer to its file
-write-file | C-x C-w | Save a buffer to a specified file
-save-some-buffers | C-x s | Save any or all buffers to their files
 
 
 ##Windows
 LISP function | Key binding | description
 --- | --- | ---
-delete-window | C-x 0 | kill the current window
-delete-other-windows | C-x 1 | delete all windows except selected window
 split-window-below | C-x 2 | split selected window vertically
 split-window-right | C-x 3 | split selected window horizontally
 other-window | C-x o | switch to the other window
+delete-window | C-x 0 | kill the current window
+delete-other-windows | C-x 1 | delete all windows except selected window
 
 
 ##Buffers
@@ -57,10 +57,14 @@ kill-buffer | C-x k | kill (delete) a buffer
 
 LISP function | Key binding | description
 --- | --- | ---
+beginning-of-buffer | M-< |
+end-of-buffer | M-> |
+goto-line | M-g g | goto line
 backward-char | C-b | Move back one character
 forward-char | C-f | Move forward one character
 backward-word | M-b |
 forward-word | M-f |
+backward-word | M-3 M-b | Move back 3 words
 forward-word | M-5 M-f | Move forward 5 words
 previous-line | C-p |
 next-line | C-n |
@@ -70,9 +74,6 @@ backward-sentence | M-a |
 forward-sentence | M-e |
 scroll-up-command | C-v |
 scroll-down-command | M-v |
-beginning-of-buffer | M-< |
-end-of-buffer | M-> |
-
 
 
 ## Make it more purty
@@ -162,6 +163,73 @@ negative-argument | M-- | do the opposite of what comes next
  | M--M-l | change the previous word to lowercase
 transpose-chars | C-t | transpose two adjacent characters
 transpose-words | M-t | transpose two adjacent words
-transose-lines | C-x C-t | transpose two consecutive lines
+transpose-lines | C-x C-t | transpose two consecutive lines
 
+
+##Fillin 'n formattin
+LISP function | Key binding | description
+--- | --- | ---
+ | M-x auto-fill-mode | turn on / off Auto Fill mode
+fill-paragraph | M-q | fill a paragraph
+digit-argument fill-paragraph | M-1 M-q | fill + justify a paragraph
+fill-region | M-x fill-region | fill each paragraph in the region
+fill-region-as-paragraph | M-x fill-region-as-paragraph | fill the region as one long paragraph
+set-fill-column | C-x f | set the fill column value
+describe-variable | C-h v fill-column | display the current fill column value
+
+
+## Lookin fir stuff
+LISP function | Key binding | description
+--- | --- | ---
+isearch-forward | C-s | forward: incremental search
+isearch-backward | C-r | backward: incremental search
+ | C-s C-w C-s | search using the word after point
+ | C-s C-w C-w C-s | select using the next 2 words after point
+ | C-s C-w C-w C-w C-s | select using the next 3  words after point
+ | C-s C-w C-w C-w DEL C-s | select using the next 2 words after point
+ | C-s RET string RET | forward: non-incremental search 
+ | C-r RET string RET | backward: non-incremental search 
+ | C-s RET C-w string RET | forward: word search
+ | C-r RET C-w string RET | backward: word search
+isearch-forward-regexp | M-C-s | forward: incremental search (for [regexp](http://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html))
+isearch-backward-regexp | M-C-s | backward: incremental search (for [regexp](http://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html))
+isearch-forward-regexp | M-C-s RET | forward: non-incremental search (for [regexp](http://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html))
+isearch-backward-regexp | M-C-s RET | backward: non-incremental search (for [regexp](http://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html))
+
+
+## WHILE Lookin fir stuff
+LISP function | Key binding | description
+--- | --- | ---
+ | C-s | search forward for the same pattern
+ | C-r | search backward for the same pattern
+ | RET | terminate the search
+ | C-g | (while waiting for input) abort entire command
  
+
+## Findin 'n Fixn stuff
+LISP function | Key binding | description
+--- | --- | ---
+query-replace | M-% | query: serach and replace
+query-replace-regexp | M-x query-replace-regexp | query: regexp serach and replace
+replace-string | M-x replace-string | no query: search and replace
+replace-regexp | M-x replace-regexp | no query: regexp search and replace
+
+
+## WHILE Findin 'n Fixn stuff
+LISP function | Key binding | description
+--- | --- | ---
+ | C-r | start recursive edit (use M-C-c to return)
+
+
+## Modes
+LISP function | Key binding | description
+--- | --- | ---
+apropos-command | C-h a mode | display summary of all modes
+ | M-x *-mode | show all modes
+ | C-h m | show the enabled minor modes for the current buffer
+describe function | C-h f sometext-mode | get info about a major or minor mode
+ | M-x mode-name | set the specified mode
+ 
+ 
+
+
