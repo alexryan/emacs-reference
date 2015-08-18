@@ -6,8 +6,15 @@
 LISP function | Key binding | description
 --- | --- | ---
 help-for-help | C-h ? | navigate the help system
-describe-key | C-h k | describe a key sequence
 describe-bindings | C-h b | show all key bindsings
+describe-key-briefly | C-h c | you specify a key, emacs tells you what it does
+describe-key | C-h k | you specify a  key sequence; emacs describes its function
+Info-goto-emacs-key-command-node | C-h K | you specify a  key sequence; emacs goes to the manual page
+describe-variable | C-h v | describe a variable
+apropos-command | C-h a regexp | find functions by regex
+describe-function | C-h f | describe a function
+where-is | C-h w | describe a function
+info | C-h i | launch the info facility
 
 
 ## Oops!!!
@@ -79,7 +86,10 @@ scroll-down-command | M-v |
 ## Make it more purty
 LISP function | Key binding | description
 --- | --- | ---
-linum-mode | N/A | show line numbers
+linum-mode | M-x linum-mode | show line numbers
+ | M-: (setq default-tab-width 2) | change the tab width
+ | M-x untabify | convert tabs to spaces
+ 
 
 
 ## Region: Select it
@@ -104,12 +114,13 @@ upcase-region | C-x C-u | convert all characters in region to uppercase
 count-words-region | M-= | count lines, words and characters
 shell-command-on-region | M-\| wc -l | run a shell command, use characters as data
 shell-command-on-region | M-\| sort -u | run a shell command, use characters as data
-  
+
 
 ##Editing
 LISP function | Key binding | description
 --- | --- | ---
 open-line | C-o | open a new line
+string-rectangle | C-x r t | prepend a character to every line in the selected region
 
 
 ##DELETE commands
@@ -221,6 +232,15 @@ LISP function | Key binding | description
  | C-r | start recursive edit (use M-C-c to return)
 
 
+## Shell Commands
+LISP function | Key binding | description
+--- | --- | ---
+shell | M-x shell | start a separate shell in its own buff
+shell-command | M-! | run a shell command
+shell-command-on-region | M-\| | run a shell command using the region as input
+
+
+
 ## Modes
 LISP function | Key binding | description
 --- | --- | ---
@@ -231,5 +251,13 @@ describe function | C-h f sometext-mode | get info about a major or minor mode
  | M-x mode-name | set the specified mode
  
  
-
-
+## LISP stuff
+LISP function | Key binding | description
+--- | --- | ---
+command query-replace | M-: (find-file user-init-file) | open ~/.emacs
+execute-extended-command | M-x eval-buffer | 
+ | M-x package-list-packages | list packages
+ | M-x package-refresh-contents |
+ | M-x package-install |
+ 
+ 
