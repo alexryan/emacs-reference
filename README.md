@@ -27,6 +27,12 @@ keyboard-escape-quit | M-M-M | and definitely don't do this
 view-lossage | C-h l | view a complete history of all the commands you've entered so far
 list-command-history | M-x list-command-history | view a history of mini-buffer commands you've entered
 
+## Fancy stuff
+LISP function | Key binding | description
+--- | --- | ---
+eval-expression | M-: | Read a single Emacs Lisp expression in the minibuffer, evaluate it, and print the value in the echo area (eval-expression).
+
+
 
 ##Files
 LISP function | Key binding | description
@@ -40,6 +46,14 @@ insert-file | C-x i | Insert contents of file into buffer
 find-file-other-window | C-x 4 C-f | Read contents of file into next window
 find-file-other-window | C-x 4 f | Read contents of file into next window
 find-file-read-only-other-window, | C-x 4 r | Read contents of file into next window (read only)
+
+
+##dired
+LISP function | Key binding | description
+--- | --- | ---
+dired | C-x d | open dired using the current directory
+dired | M-: (dired "/full/path") | open dired using the specified directory
+dired-to-copy | C new RET | Copy the specified files.
 
 
 ##Windows
